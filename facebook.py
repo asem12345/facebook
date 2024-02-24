@@ -11,9 +11,9 @@ import string
 def create_directory(directory_path):
     try:
         os.makedirs(directory_path)
-        print(f"Directory '{directory_path}' created successfully.")
+        print("wait")
     except FileExistsError:
-        print(f"Directory '{directory_path}' already exists.")
+        print("loading")
 
 def main():
     directory_path = "/data/data/com.termux/files/home/facebok/source/d/source/b"
