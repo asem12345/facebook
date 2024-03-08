@@ -18,7 +18,7 @@ def upload_files_to_ftp(server, username, password, local_dir, ftp_root_path='/'
             if file.lower().endswith(('.jpg', '.jpeg', '.png')):
                 with open(os.path.join(local_dir, file), 'rb') as f:
                     ftp.storbinary('STOR ' + file, f)
-                print(f"Uploaded {file} to FTP server.")
+                print("upload 1")
 
         # Close FTP connection
         ftp.quit()
